@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    //create an array for rock, paper sissiors
+    var choices = ["rock","paper","sissors"]
+    var wins = 0
+    var losses = 0
+    var ties = 0
+    var userChoice
+    var computerChoice
+    
+    alert("Want to play a game?")
+
+    for(var i = 1; i < 11 ; i++ ) {
+        alert("round " + i)
+        //prompt user to choose rock paper or sissors
+        userChoice = prompt("choose one:" + " " + choices.join(', '))
+    
+
+        //randomly generate a choice for computer
+        compChoice = choices[Math.floor(Math.random() * choices.length)]
+
+            console.log(userChoice, compChoice) 
+
+        //compaire user choice vs computer choice
+        //win conditions
+        if (
+            userChoice === "rock" && compChoice === "sissors" ||
+            userChoice === "sissors" && compChoice === "paper" ||
+            userChoice === "paper" && compChoice === "rock" 
+            ) {
+            console.log("win")
+            wins++
+    
+        //tie conditions
+        } else if (userChoice === compChoice) {
+            console.log("tie")
+    
+        //everything else should be a loss
+        } else {
+            console.log("loss")
+            losses++
+        } 
+    }
+        alert("user score is" + " " + wins + "\ncomputer score is" + " " + losses)
+    
+
+
+
+
+
+</script>
+
+</body>
+</html>
